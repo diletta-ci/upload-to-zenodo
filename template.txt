@@ -1,0 +1,29 @@
+{
+    "metadata": {
+        "title": "{TITLE}",
+        "description": "{ABSTRACT}",
+        "creators": {CREATORS},
+        "contributors": {CONTRIBUTORS},
+        "keywords": {KEYWORDS}, 
+        "upload_type": "{UPLOAD_TYPE}",
+        "access_right": "{ACCESS_RIGHT}", 
+        "communities": [{ "identifier": "{COMMUNITY_IDENTIFIER}" }],
+        "license": "{LICENSE}",
+        "embargo_date": "{EMBARGO_DATE}",
+        "language": "{LANGUAGE}",
+        "dates": {DATES},
+    
+        "partof_pages": "",
+        "publication_type": "",
+        "imprint_isbn": "",
+        "imprint_place": "", 
+        "imprint_publisher": "",
+        "partof_title": "",
+        "conference_dates": "", 
+        "conference_place": "", 
+        "conference_title": "", 
+        "conference_url": "",
+        "publication_date": "", 
+        "related_identifiers": []
+    }
+}
