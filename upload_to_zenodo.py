@@ -12,10 +12,13 @@ def upload(metadata, pdf_path):
         return
 
     # Create new paper submission
-    url = "{base_url}/api/deposit/depositions/?access_token={token}".format(base_url=BASE_URL, token=TOKEN)
+    url = "{base_url}/api/deposit/depositions".format(base_url=BASE_URL)
     headers = {"Content-Type": "application/json"}
-    response = requests.post(url, data=metadata, headers=headers)
-    #print(response.text)
+    params = {'access_token': TOKEN}
+    response = requests.post(
+        url, 
+        params=params, data=metadata, headers=headers)
+
     if response.status_code > 210:
         print("Error happened during submission, status code: " + str(response.status_code))
         return
@@ -28,7 +31,7 @@ def upload(metadata, pdf_path):
     upload_metadata = {'filename': 'paper.pdf'}
     files = {'file': open(pdf_path, 'rb')}
     response = requests.post(url, data=upload_metadata, files=files)
-    #print(response.text)
+
     if response.status_code > 210:
         print("Error happened during file upload, status code: " + str(response.status_code))
         return
