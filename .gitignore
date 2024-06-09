@@ -1,1 +1,6 @@
-run_private.*
+# OS files
+.DS_Store
+
+# Generated json and pdf files
+*.json
+*.pdf
