@@ -3,7 +3,7 @@ set -a # automatically export all variables
 source .env
 set +a
 
-python3 ./fill_template.py ./template.txt data.csv
+python3 ./fill_template.py ./data/template.txt ./data/data.csv
 
 echo Copy the .pdf files to the folder of .json files.
 read -rsp $'Press enter to continue...\n'
