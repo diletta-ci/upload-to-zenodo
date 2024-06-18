@@ -2,7 +2,6 @@ import sys
 import csv
 import os.path
 
-
 def fill_template(template_filename, data_filename):
     # Reading the template
     with open(template_filename,"r") as template_file:
@@ -23,7 +22,10 @@ def fill_template(template_filename, data_filename):
                     print(("    {%s} = %s" % (column, row[column])).encode().decode('cp850'))
                     
             # Write to output file
-            with open(output_filename, "w", encoding='utf-8') as output_file:
+            output_dir = './deposits'
+            output_path = os.path.join(output_dir, output_filename)
+
+            with open(output_path, "w", encoding='utf-8') as output_file:
                 output_file.write(filled_template)
                 
                 

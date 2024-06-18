@@ -74,9 +74,9 @@ if __name__ == "__main__":
         exit()
     
     TOKEN = sys.argv[1]
-    directory = sys.argv[2]
-    if not os.path.isdir(directory):
+    input_directory = sys.argv[2]
+    if not os.path.isdir(input_directory):
         print("Invalid directory.")
         exit()
    
-    batch_upload(directory)
+    batch_upload(input_directory)
