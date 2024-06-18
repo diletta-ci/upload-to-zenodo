@@ -8,5 +8,4 @@ python3 ./fill_template.py ./data/template.txt ./data/data.csv
 echo Copy the .pdf files to the folder of .json files.
 read -rsp $'Press enter to continue...\n'
 
-TOKEN=$ACCESS_TOKEN_SANDBOX
-python3 ./upload_to_zenodo.py $TOKEN ./deposits
+python3 ./upload_to_zenodo.py $ACCESS_TOKEN_SANDBOX ./deposits
