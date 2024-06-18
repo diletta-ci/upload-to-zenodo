@@ -22,7 +22,7 @@ def fill_template(template_filename, data_filename):
                     print(("    {%s} = %s" % (column, row[column])).encode().decode('cp850'))
                     
             # Write to output file
-            output_dir = './deposits'
+            output_dir = os.environ['DEPOSITS_DIRECTORY']
             output_path = os.path.join(output_dir, output_filename)
 
             with open(output_path, "w", encoding='utf-8') as output_file:
