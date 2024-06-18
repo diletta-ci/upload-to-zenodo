@@ -4,3 +4,6 @@
 # Generated json and pdf files
 *.json
 *.pdf
+
+# Environment variables
+.env
