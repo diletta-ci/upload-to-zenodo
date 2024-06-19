@@ -6,8 +6,9 @@ This script is a fork of the [darvasd](https://github.com/darvasd/upload-to-zeno
 
 ## Modifications to Suit My (or My Friends') Specific Needs:
 
-- Passed separate parameters to the POST request.
-- Added a .env file to manage sensitive variables in the script (e.g., the access token).
+- Passed separate parameters to the `POST` request.
+- Added a `.env` file to manage sensitive variables in the script (e.g., the access token).
+- Used environment variables to easily deploy to sandbox or production from command line.
 - Separated data and template files from the home directory for better readability.
 - Separated documents to be uploaded to Zenodo from the home directory for better readability.
 
@@ -15,12 +16,19 @@ This script is a fork of the [darvasd](https://github.com/darvasd/upload-to-zeno
 [Zenodo](http://zenodo.org) is a free, open-source research repository, containing papers, but also data sets and software. 
 
 ## Quick start
-_You don't want to accidentally flood your real Zenodo account with dummy submissions. We don't want that either. That's why by default the script `upload_to_zenodo.py` uses the sandbox of Zenodo. When you are done with experimenting, just replace `sandbox.zenodo.org` with `zenodo.org` in that script._
+_You don't want to accidentally flood your real Zenodo account with dummy submissions. We don't want that either. That's why the script have two different command to differenciate betweent Zenodo sandbox and production. 
+
+Use the command `bash run.sh sandbox` to upload into the sandbox.
+
+When you are done with experimenting, just use `bash run.sh production` to run the script on production environment.
+
+Remember to set up your environment variable in the .env file (have a look at the example below).
+_
 
 <a href="https://github.com/darvasd/upload-to-zenodo/blob/master/docs/overview.png" title="Overview"><img src="https://github.com/darvasd/upload-to-zenodo/blob/master/docs/overview.png" width="800" /></a>
 
 1. Get a _Personal access token_ at https://zenodo.org/account/settings/applications/. The `deposit:write` is enough: to be on the safe side, the script does not publish the uploaded papers, the _Publish_ button has to be pushed manually. (Once a document is published on Zenodo, the attached files cannot be modified.)
-   - Set the variable `ACCESS_TOKEN_SANDBOX` with your token in the .env file.
+   - Set the variable `ACCESS_TOKEN_SANDBOX`|`ACCESS_TOKEN_PRODUCTION` with your token in the .env file.
 1. If you would like to group all your uploads to a Zenodo _Comunity_ (that may represent your conference or conference series), [create it](https://zenodo.org/communities/new/) and note its ID. 
 1. Create a template JSON describing your submissions. Check the [documentation](https://zenodo.org/dev#restapi-rep) (Representations > Deposition metadata) for details about it.
    - Use `{key-name}` for parts that are different for each submission.
@@ -37,6 +45,16 @@ _You don't want to accidentally flood your real Zenodo account with dummy submis
 1. Execute the script `upload_to_zenodo.py` to upload your submissions.
    - Usage: `upload_to_zenodo.py <token> <directory>`, where `<token>` is your personal access token, and `<directory>` is the directory that contains the JSON and PDF files to be uploaded.
 1. Go to the [Upload page](https://zenodo.org/deposit), check and publish your submissions.
+
+
+## .env File Example
+```
+BASE_URL_SANDBOX="https://sandbox.zenodo.org"
+BASE_URL_PRODUCTION="https://zenodo.org"
+ACCESS_TOKEN_SANDBOX="yourSandboxToken"
+ACCESS_TOKEN_PRODUCTION="yourProductionToken"
+DEPOSITS_DIRECTORY="./deposits"
+```
 
 
 ### Disclaimer

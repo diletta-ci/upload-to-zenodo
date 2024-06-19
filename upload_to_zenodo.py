@@ -4,8 +4,9 @@ import os
 import sys
 import codecs
 
-BASE_URL = "https://sandbox.zenodo.org" # TODO: once you are sure about what you are doing, remove the "sandbox." part
-TOKEN = ""
+APP_ENV = os.getenv('APP_ENV')
+BASE_URL = os.environ['BASE_URL_' + APP_ENV]
+TOKEN = os.environ['ACCESS_TOKEN_' + APP_ENV]
 
 def upload(metadata, pdf_path):
     if not _is_valid_json(metadata):
