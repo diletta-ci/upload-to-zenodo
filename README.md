@@ -17,13 +17,9 @@ This script is a fork of the [darvasd](https://github.com/darvasd/upload-to-zeno
 
 ## Quick start
 _You don't want to accidentally flood your real Zenodo account with dummy submissions. We don't want that either. That's why the script have two different command to differenciate betweent Zenodo sandbox and production. 
-
 Use the command `bash run.sh sandbox` to upload into the sandbox.
-
 When you are done with experimenting, just use `bash run.sh production` to run the script on production environment.
-
-Remember to set up your environment variable in the .env file (have a look at the example below).
-_
+Remember to set up your environment variable in the .env file (have a look at the example below)._
 
 <a href="https://github.com/darvasd/upload-to-zenodo/blob/master/docs/overview.png" title="Overview"><img src="https://github.com/darvasd/upload-to-zenodo/blob/master/docs/overview.png" width="800" /></a>
 
